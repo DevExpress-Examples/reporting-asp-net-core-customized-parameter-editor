@@ -17,7 +17,7 @@
             var validationRule = {
                 type: "range",
                 min: new Date(2000, 0, 1),
-                message: "We do not hold data this far back"
+                message: "We do not retain data prior to the year 2000."
             };
             e.info.validationRules.push(validationRule);
         };
