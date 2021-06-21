@@ -1,6 +1,8 @@
 <script type="text/html" id="employeeID-custom-editor">
-        <div data-bind="dxTreeList: { dataSource: data, columns: columns, showBorders: true,
-         selection:{mode: 'single'}, onSelectionChanged: onSelectionChanged }"> </div>
+    <div data-bind="dxTreeList: { dataSource: data, columns: columns, showBorders: true,
+         selection:{mode: 'single'}, onSelectionChanged: onTreeListSelectionChanged,
+         onInitialized: onTreeListInitialized}">
+    </div>
 </script>
 
 <script type="text/javascript">
@@ -19,21 +21,23 @@
                 min: new Date(2000, 0, 1),
                 message: "We do not retain data prior to the year 2000."
             };
-            e.info.validationRules.push(validationRule);
+            e.info.validationRules = [validationRule];
         };
         if (e.parameter.name == "p_employeeID") {
             e.info.editor = { header: 'employeeID-custom-editor' };
         };
     };
-    function onSelectionChanged(s, e) {
-        p_employeeID_editor = s;
-        if (s.selectedRowsData.length > 0) {
-            var selectedEmployeeID = s.selectedRowsData[0].id;
-            DocumentViewer.GetParametersModel().p_employeeID(selectedEmployeeID);
+    function onTreeListInitialized(e) {
+        p_employeeID_editor = e.component;
+    }
+    function onTreeListSelectionChanged(e) {
+        if (e.selectedRowsData.length > 0) {
+            var selectedEmployeeID = e.selectedRowsData[0].id;
+            WebDocumentViewer1.GetParametersModel().p_employeeID(selectedEmployeeID);
         }
     };
     function onParametersReset(s, e) {
-        p_employeeID_editor.component.deselectAll();        
+        p_employeeID_editor.deselectAll();
     };
     function setPanelWidth(s, e) {
         var previewModel = s.GetPreviewModel();
