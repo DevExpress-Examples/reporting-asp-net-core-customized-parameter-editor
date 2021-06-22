@@ -15,7 +15,10 @@
 
     function customizeParameterEditors(s, e) {
         if (e.parameter.type === 'System.DateTime') {
-            e.info.editor.extendedOptions = { type: 'date' };
+            e.info.editor = $.extend({}, e.info.editor);
+            e.info.editor.extendedOptions =
+                $.extend(e.info.editor.extendedOptions || {},
+                    { type: 'date' }, { displayFormat: 'dd-MMM-yyyy' });
             var validationRule = {
                 type: "range",
                 min: new Date(2000, 0, 1),
