@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ParameterEditorAspNetCoreExample": {
+      "commandName": "Project",
+      "launchBrowser": true
+    }
+  }
+}
