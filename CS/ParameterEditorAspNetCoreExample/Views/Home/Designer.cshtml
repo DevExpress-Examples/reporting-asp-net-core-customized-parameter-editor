@@ -8,8 +8,7 @@
 @{
     var designerRender = Html.DevExpress().ReportDesigner("reportDesigner")
         .Height("1000px")
-        .ClientSideEvents(configure =>
-        {
+        .ClientSideEvents(configure => {
             configure.BeforeRender("registerParameters");
         })
         .Bind("TestReport");

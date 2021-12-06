@@ -50,8 +50,7 @@
 
 @{ var viewerRender = Html.DevExpress().WebDocumentViewer("DocumentViewer")
            .Height("1000px")
-           .ClientSideEvents(configure =>
-           {
+           .ClientSideEvents(configure => {
                configure.CustomizeParameterEditors("customizeParameterEditors");
                configure.ParametersReset("onParametersReset");
                configure.BeforeRender("setPanelWidth");
