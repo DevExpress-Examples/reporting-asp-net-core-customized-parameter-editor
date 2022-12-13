@@ -12,7 +12,7 @@ namespace ParameterEditorAspNetCoreExample.PredefinedReports
             InitializeComponent();
         }
 
-        private void tableCell4_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void tableCell4_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
         {
             (sender as XRTableCell).Text += " Customized";
         }
