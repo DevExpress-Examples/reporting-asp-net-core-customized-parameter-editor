@@ -12,6 +12,7 @@
     var columns = [{ dataField: "name", caption: "Name" }, { dataField: "title", caption: "Title" }];
 
     var p_employeeID_editor;
+    var parametersModel;
 
     function customizeParameterEditors(s, e) {
         if (e.parameter.type === 'System.DateTime') {
@@ -36,15 +37,16 @@
     function onTreeListSelectionChanged(e) {
         if (e.selectedRowsData.length > 0) {
             var selectedEmployeeID = e.selectedRowsData[0].id;
-            WebDocumentViewer1.GetParametersModel().p_employeeID(selectedEmployeeID);
+            parametersModel.p_employeeID = selectedEmployeeID;
         }
     };
     function onParametersReset(s, e) {
         p_employeeID_editor.deselectAll();
     };
-    function setPanelWidth(s, e) {
+    function onBeforeRender(s, e) {
         var previewModel = s.GetPreviewModel();
-        previewModel.tabPanel.width(500);
+        previewModel.tabPanel.width = 500;
+        parametersModel = previewModel.parametersModel;
     };
 </script>
 
@@ -53,7 +55,7 @@
            .ClientSideEvents(configure => {
                configure.CustomizeParameterEditors("customizeParameterEditors");
                configure.ParametersReset("onParametersReset");
-               configure.BeforeRender("setPanelWidth");
+               configure.BeforeRender("onBeforeRender");
            })
           .Bind("TestReport");
 }
