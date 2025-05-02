@@ -27,17 +27,6 @@
   <ItemGroup>
     <EmbeddedResource Include="PredefinedReports\*.vsrepx" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="PredefinedReports\TestReport.vsrepx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="PredefinedReports\TestReport.cs">
-      <DependentUpon>TestReport.vsrepx</DependentUpon>
-    </Compile>
-    <Compile Update="PredefinedReports\TestReport.Designer.cs">
-      <DependentUpon>TestReport.vsrepx</DependentUpon>
-    </Compile>
-  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="LibraryManagerRestore" Condition="!Exists('node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
