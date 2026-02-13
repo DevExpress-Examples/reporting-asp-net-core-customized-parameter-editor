@@ -26,7 +26,7 @@ This example demonstrates how to customize a standard parameter editor and add a
 - [Custom Report Parameter Types in Web Reporting Controls (ASP.NET Core)](https://github.com/DevExpress-Examples/Reporting-Custom-Parameter-Editor-AspNet-Core)
 - [How to use custom report parameter types in web reporting controls](https://github.com/DevExpress-Examples/Reporting_How-to-add-and-use-custom-types-for-report-parameters-in-the-web-reporting-controls)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-asp-net-core-customized-parameter-editor&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-asp-net-core-customized-parameter-editor&~~~was_helpful=no)
 
